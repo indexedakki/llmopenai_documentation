@@ -108,6 +108,7 @@ async def read_root(data: dict):
 
     def main():
         # Parsing Github files:
+        logger.info(f"In main")
         print("in main")
         link = data.get('data')
         github_link = link +'/tree/main'
@@ -131,6 +132,7 @@ async def read_root(data: dict):
             temp = "\n\n" + generated_text
             documents += f"""\n ************************************** \n\n
                             FILE NAME--------- {file['name']} \n  {temp} """
+        logger.info(f"File generated")
 
         file_name1 = "output.txt"
         with open(file_name1, "w") as file:
