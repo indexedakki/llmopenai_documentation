@@ -1,5 +1,4 @@
 openai
 fastapi
 uvicorn
-accelerate==0.23.0
 requests
