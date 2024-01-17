@@ -123,8 +123,10 @@ async def read_root(data: dict):
         logger.info(f"In main")
         print("in main")
         link = data.get('data')
-        github_link = link +'/tree/main'
+        github_link = link +"/tree/main"
+        logger.info("Github link", github_link)
 
+     
         file_regex = r'.*\.py'  # Specify a regex pattern if needed
         files = fetch_github_files_recursive(github_link, file_regex)
 
@@ -144,7 +146,7 @@ async def read_root(data: dict):
             temp = "\n\n" + generated_text
             documents += f"""\n ************************************** \n\n
                             FILE NAME--------- {file['name']} \n  {temp} """
-        
+        logger.info(documents)
         file_name1 = "output1.txt"
         with open(file_name1, "w") as file:
             file.write(str(documents))
