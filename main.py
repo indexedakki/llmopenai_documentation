@@ -144,11 +144,11 @@ async def read_root(data: dict):
             temp = "\n\n" + generated_text
             documents += f"""\n ************************************** \n\n
                             FILE NAME--------- {file['name']} \n  {temp} """
-        logger.info(f"File generated")
-
-        file_name1 = "output.txt"
+        
+        file_name1 = "output1.txt"
         with open(file_name1, "w") as file:
             file.write(str(documents))
+        logger.info(f"File generated")
 
         # return {"message": "Files generated successfully"}
     main()
