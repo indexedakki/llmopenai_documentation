@@ -165,4 +165,4 @@ async def read_root(data: dict):
 @app.get("/file")
 async def get_file():
     logger.info(f"Sending output File")
-    return FileResponse("/home/site/wwwroot/output.txt", media_type='text/plain', filename="output.txt")
+    return FileResponse("/home/site/wwwroot/output.txt", media_type='text/plain')
