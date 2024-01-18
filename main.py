@@ -148,9 +148,14 @@ async def read_root(data: dict):
                             FILE NAME--------- {file['name']} \n  {temp} """
         logger.info(documents)
         # file_name1 = "output1.txt"
-        with open('/home/site/wwwroot/myfile.txt', 'w') as file:
+        with open('/home/site/wwwroot/output.txt', 'w') as file:
             file.write(str(documents))
         logger.info(f"File generated")
 
         # return {"message": "Files generated successfully"}
     main()
+ 
+@app.get("/file")
+async def get_file():
+  logger.info(f"Sending output File")
+  return FileResponse("/home/site/wwwroot/output.txt", media_type='text/plain', filename="output.txt")
