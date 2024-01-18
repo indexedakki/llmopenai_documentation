@@ -34,6 +34,11 @@ import logging
 
 app = FastAPI()
 
+origins = [
+   "http://localhost:3000", # React app
+   "https://example.com", # Production app
+]
+
 # Allow all origins
 app.add_middleware(
     CORSMiddleware,
